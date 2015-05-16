@@ -1,0 +1,147 @@
+/*
+Theme Name:     Mystile for Bakagain
+Theme URI:      http://www.woothemes.com/
+Description:    Mystile Child theme for Bakagain
+Author:         Kyle Baker
+Author URI:     http://www.bakagain.com
+Template:       mystile
+Version:        0.1.0
+*/
+
+
+/*------------------------------------*\
+	Sidebar General
+\*------------------------------------*/
+#sidebar {
+	overflow: hidden;
+}
+
+
+
+/*------------------------------------*\
+	Sidebar Navigation
+\*------------------------------------*/
+.widget.widget_product_categories > h3 {
+	font-size: 1.5em;
+	border: none;
+}
+#sidebar ul.product-categories .children {
+	margin-left: 10px;
+}
+#sidebar ul.product-categories li.cat-item {
+	padding: 2px 0;
+	line-height: 1.2em;
+}
+
+#sidebar ul.product-categories > li.cat-item > a {
+	font-size: 1.1em;
+	line-height: 1.2em;
+	color: #fff;
+	display: block;
+	width: calc(100% - 10px);
+	padding: 5px 0 5px 10px;
+}
+
+.widget.widget_product_categories li:before {
+	display: none !important;
+}
+
+/* Product Categories Menu */
+.product-categories .cat-item.current-cat-parent > .children {
+	display: block;
+}
+
+/* widget nav arrows */
+#sidebar .product-categories.parent .children > .cat-item:before {
+	display: none !important;
+}
+
+
+
+
+
+/*------------------------------------*\
+	Colorize Product Cat. navigation
+\*------------------------------------*/
+/* Education */
+#sidebar li.cat-item-97 > a {
+	/*background-color: #630;*/
+	background-color: #f60;
+}
+.cat-item-97 .children a:hover {
+	color: #f60;
+}
+
+/* Business */
+#sidebar li.cat-item-163 > a {
+	background-color: #369;
+}
+.cat-item-163 .children a:hover {
+	color: #369;
+}
+
+/* Healthcare */
+#sidebar li.cat-item-77 > a {
+	background-color: #9c0;
+}
+.cat-item-77 .children a:hover {
+	color: #9c0;
+}
+
+/* Lifestyle */
+#sidebar li.cat-item-293 > a {
+	background-color: #c33;
+}
+.cat-item-293 .children a:hover {
+	color: #c33;
+}
+
+/* Parent Category Link */
+#sidebar ul.product-categories > li.cat-parent > a:hover {
+	text-decoration: underline;
+}
+
+
+
+
+
+/*------------------------------------*\
+	Widgets
+\*------------------------------------*/
+#sidebar .addthis_counter {
+	display: none !important;
+}
+
+/* Search Widget */
+.widget.woocommerce.widget_product_search h3 {
+	display: none;
+}
+
+#sidebar input[type=submit],
+#sidebar input[type=text] {
+	box-shadow: none;
+}
+
+.widget.woocommerce.widget_product_search input[type=submit] {
+	padding: .236em .557em;
+	font-size: 11px;
+	font-weight: normal;
+	letter-spacing: .05em;
+	margin-right: 0;
+}
+
+.widget.woocommerce.widget_product_search input[type=search] {
+	width: calc( 100% - 70px );
+}
+
+.term-227 .woocommerce-result-count,
+.term-227 .woocommerce-ordering,
+.term-227 .products {
+	display: none;
+}
+
+@media screen and (min-width: 796px) {
+	#sidebar.col-right {
+		width: 25%;
+	}
+}
