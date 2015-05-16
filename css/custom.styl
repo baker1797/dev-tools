@@ -1,86 +1,367 @@
-#header #logo,
-#header hgroup {
-	margin:0px;
+
+@import 'inc/layout.styl'
+@import 'inc/header.styl'
+@import 'inc/footer.styl'
+@import 'inc/sidebar.styl'
+@import 'inc/product-cat.styl'
+
+
+
+/*------------------------------------*\
+	Base
+\*------------------------------------*/
+h1 {
+	font-size: 2em;
+	font-weight: 600;
+	line-height: 1.387em;
+	color: rgb(102,51,0);
 }
-#header {
-	padding: 5px 0px;
-	/*top: 3em;*/
-	margin-bottom: 4em;
-	border:none;
+h2 {
+	font-size: 2em;
+	font-weight: 600;
+	line-height: 1em;
 }
-#top {
-	background: #e8e8e8;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Myriad Pro", sans-serif;
+	margin: 0 0 .318em;
 }
-#copyright>p {
-	margin:0;
+blockquote {
+	margin-left: 2em;
+	padding-right: 2em;
+	padding-left: 1em;
+	margin-right: 2em;
+}
+a:hover {
+	color: rgb(102,51,0);
 }
 
-/* Product category navigation colors */
-a.category-link-furniture,
-a.category-link-furniture:visited,
-div.term-description a:nth-child(1) {
-	color: #663300;
+
+
+
+/*------------------------------------*\
+	Theme Overrides
+\*------------------------------------*/
+.page header h1 {
+	font-size: 2.2em;
+	font-weight: bold;
 }
-a.category-link-healthcare,
-a.category-link-healthcare:visited,
-div.term-description a:nth-child(2) {
-	color: #336699;
-}
-a.category-link-lifestyle,
-a.category-link-lifestyle:visited,
-div.term-description a:nth-child(3) {
-	color: #99cc00;
-}
-a.category-link-culinary,
-a.category-link-culinary:visited,
-div.term-description a:nth-child(4) {
-	color:#ff3300;
+.tp-bullets.hidebullets {
+	display: none;
 }
 
-@media (min-width:768px) {
-	#top {
-		position:fixed;
-		left:0;
-		background: #e8e8e8;
-		z-index:10000;
-		margin: 0em auto;
-		width:100%;
-		padding: 0;
-		-webkit-box-shadow: 0px 2px 10px -2px rgba(61, 65, 67, 0.45);
-		-moz-box-shadow:    0px 2px 10px -2px rgba(61, 65, 67, 0.45);
-		box-shadow:         0px 2px 10px -2px rgba(61, 65, 67, 0.45);
-	}
-	#header {
-		top: 2.5em;
-		padding: 1.618em 0 0;
-	}
+#main ul#gform_fields_2 {
+	padding-left: 0;
+}
+.gform_wrapper .left_label input.medium {
+	width: 62%;
 }
 
+
+/* Fix bullet indentation */
+.post-content section ul,
+.post-content section ol,
+.woocommerce-tabs #tab-description ol,
+.woocommerce-tabs #tab-description ul,
+#main ul,
+#main ol {
+	margin-left: 1.5em;
+	padding-left: 1.5em;
+}
+#main .post-meta ul {
+	margin-left: 0;
+	padding-left: 0;
+}
+.post-meta ul {
+	margin: 0;
+	padding: 10px 0;
+}
+.post .post-meta li.comments {
+	display: none !important;
+}
+
+ul.products {
+	padding-left: 0 !important;
+}
+
+
+mark.count {
+	display: none;
+}
+
+.reset_variations {
+	display: none !important;
+}
+
+.widget h3 {
+	margin-bottom: 0;
+	border-top: none !important;
+}
+
+.widget.widget_products img {
+	border-radius: 0 !important;
+	width: 50px !important;
+}
+
+#blog_subscription-2 p {
+	margin-bottom: 1em;
+}
+
+.shop_table dd {
+	margin-bottom: 0 !important;
+}
 .half_last p:last-child {
-	margin-bottom:0px;
-	padding-bottom:0px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 }
 div.clear p {
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
 }
-/*
- * Top Bar - shrink padding
- */
-#top ul.nav > li a {
-	padding-top: 0.7em; /* was 1.387em */
-	padding-bottom: 0.7em; /* was 1.387em */
+.wistia_embed,
+.youtube-player {
+	max-width: 100%;
 }
-#top .wc-nav li.cart a {
-	padding-top: 0.6em; /* was 1.387em */
-	/*padding-bottom: 0.3em; /* was 1.387em */
+
+
+
+
+/*------------------------------------*\
+	Custom Styles
+\*------------------------------------*/
+.section-lead {
+	margin-bottom: 20px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #999;
 }
-#top .wc-nav li.checkout {
-	padding-top: 0.0em; /* was 1.387em */
-	padding-bottom: 0.0em; /* was 1.387em */
+.spaced-callout {
+	padding: 8px 0;
+	display: block;
 }
-#top .wc-nav li.search form {
-	padding-top: 0.4em; /* was 1.1em */
-	padding-bottom: 0.4em; /* was 1.1em */
-	/*padding-bottom: 0.3em; /* was 1.387em */
+.spaced-callout:before {
+	content: "\00bb";
+	font-size: 1.2em;
+	padding-right: 5px;
+}
+.thumb_label {
+	position: relative;
+	height: 18px;
+	font-size: 11px;
+	top: -10px;
+	width: 90%;
+	line-height: 18px;
+	border-radius: 8px;
+	margin: 0 auto 4px auto;
+}
+.thumb_label-free_shipping,
+.thumb_label-free-shipping {
+	background: #900;
+	color: #fff;
+}
+.thumb_label-quick-ship {
+	background: #093;
+	color: #fff;
+}
+.thumb_label-close-out {
+	background: #737;
+	color: #fff;
+}
+
+@media all and (max-width: 767px) {
+	.thumb_label {
+		display: none;
+	}
+}
+
+
+
+
+/*------------------------------------*\
+	Everything else
+\*------------------------------------*/
+
+/* Product Cat - Page Titles */
+.term-97 .page-title,
+.term-163 .page-title,
+.term-77 .page-title,
+.term-293 .page-title {
+	padding: 5px 10px;
+	color: #fff;
+}
+
+/* Education */
+.term-97 .page-title {
+	background-color: #f60;
+}
+/* Business */
+.term-163 .page-title {
+	background-color: #369;
+}
+/* Healthcare */
+.term-77 .page-title {
+	background-color: #9c0;
+}
+/* Lifestyle */
+.term-293 .page-title {
+	background-color: #c33;
+}
+
+/* Top Nav Logo button */
+ul#top-nav.nav > li:first-child > a:before {
+	content: url('http://www.bakagain.com/wp-content/uploads/Bakagain-top-nav.png');
+	position: relative;
+	padding-right: 20px;
+	display: inline-block;
+}
+
+ul#top-nav.nav > li:first-child > a {
+	vertical-align: top;
+	padding-bottom: 0;
+}
+
+.columns-4 ul.products li.product {
+	width: 22.05%;
+}
+
+#top .wc-nav li.search {
+	display: none;
+}
+
+#wrapper .col-full {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.single .type-post p:first-child {
+	font-size: 1em !important;
+}
+
+.half_last p {
+	margin-bottom: .618em !important;
+}
+
+.product .description .ul {
+	padding-left: 1.618em;
+}
+
+#logo > img {
+	width: 100%;
+}
+
+@media only screen and (min-width: 796px) {
+	.half_last {
+		padding-left: 10px;
+		width: 48%;
+	}
+}
+
+
+
+
+/* Change these to be efficient!! */
+.product_meta,
+.star-rating {
+	display: none !important;
+}
+
+.widget {
+	margin-bottom: 0.618em;
+}
+.widget#addthis-widget-2 {
+	margin-bottom: 1.618em;
+}
+.widget .jetpack-image-container {
+	padding-top: 10px;
+}
+form.woocommerce-product-search {
+	margin-bottom: 0;
+}
+
+/* Shrink Page Heading */
+.half_last h1 {
+	font-size: 1.8em;
+	color: #630;
+}
+
+.product_title.entry-title {
+	font-size: 1.6em;
+	color: #630;
+}
+
+/* Image captions */
+.wp-caption-text {
+	font-size: .8em;
+	line-height: 1.2em;
+	padding-top: .6em;
+}
+
+.post .wp-caption img {
+	margin: 0 auto !important;
+}
+
+.variations,
+form.variations_form.cart {
+	margin-bottom: 0 !important;
+}
+
+#main .metaslider.metaslider-nivo {
+	margin-bottom: 20px;
+}
+
+
+/***
+ * Homepage Top color links
+ ***/
+.term-description {
+	display: inline-block;
+	color: #ddd;
+	margin-bottom: 5px;
+	margin-left: 0;
+	font-size: 16px;
+	line-height: 20px;
+}
+.term-description > a {
+	font-weight: bold;
+}
+.term-description > a:hover {
+	text-decoration: underline;
+}
+div.term-description a:nth-child(1),
+.home .columns-4 ul li:nth-child(1) h3,
+a.category-link-furniture,
+a.category-link-furniture:visited {
+	color: #f60;
+}
+div.term-description a:nth-child(2),
+.home .columns-4 ul li:nth-child(2) h3,
+a.category-link-healthcare,
+a.category-link-healthcare:visited {
+	color: #369;
+}
+div.term-description a:nth-child(3),
+.home .columns-4 ul li:nth-child(3) h3,
+a.category-link-lifestyle,
+a.category-link-lifestyle:visited {
+	color: #9c0;
+}
+div.term-description a:nth-child(4),
+.home .columns-4 ul li:nth-child(4) h3,
+a.category-link-culinary,
+a.category-link-culinary:visited {
+	color: #c33;
+}
+
+@media all and (min-width: 768px) {
+	.term-description {
+		font-size: 15px;
+	}
+}
+
+/* Product Cat. Text */
+#main .half_last {
+	font-size: 13px;
 }

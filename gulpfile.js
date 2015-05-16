@@ -7,46 +7,51 @@
 
 /* Packages */
 var gulp         = require('gulp'),
-    uglify       = require('gulp-uglify'),
-    stylus       = require('gulp-stylus'),
-    autoprefixer = require('gulp-autoprefixer');
-    //livereload  = require('gulp-livereload'); //http://leveluptuts.com/tutorials/learning-gulp/learning-gulp-8-livereload-gulp
-    //gulp-imagemin
-    //var concat = require('gulp-concat');
+	uglify       = require('gulp-uglify'),
+	stylus       = require('gulp-stylus'),
+	minify       = require('gulp-minify-css'),
+	autoprefixer = require('gulp-autoprefixer');
+	//livereload  = require('gulp-livereload'); //http://leveluptuts.com/tutorials/learning-gulp/learning-gulp-8-livereload-gulp
+	//gulp-imagemin
+	//var concat = require('gulp-concat');
 
 
 /* Variables */
 var //jsSrcPath   = 'app/public/src-js/*.js',
-    //jsDestPath  = 'app/public/js',
-    cssSrcPath   = 'css/*',
-    cssDestPath  = '../';
+	//jsDestPath  = 'app/public/js',
+	cssSrcPath   = 'css/',
+	cssDestPath  = '../';
 
 
 // Styles Task.
 // Modifies the css files.
 // https://www.npmjs.com/package/gulp-stylus
 gulp.task( 'styles', function(){
-    //console.log( 'styles task start' );
-    gulp.src( cssSrcPath )
-        .pipe( stylus({
-            compress: true
-        }) )    // check out the options for stylus to pass function.
-        //.pipe( minifyCss({
-        //    compatibility: 'ie8'
-        //}) )
-        .pipe( autoprefixer( 'live 2 versions' ) )
-        .pipe( gulp.dest( cssDestPath ) );
-        //.pipe( livereload() );
+	//console.log( 'styles task start' );
+	gulp.src( 'css/custom.styl' )
+		.pipe( stylus({
+			compress: true
+		}) )    // check out the options for stylus to pass function.
+		.pipe( autoprefixer( 'live 2 versions' ) )
+		.pipe( gulp.dest( cssDestPath ) );
 });
+
+// Green Styles Task.
+gulp.task( 'mystile', function(){
+	gulp.src( 'mystile-src/**/*' )
+/*		.pipe( stylus({
+			compress: true
+		}) )
+*/
+		.pipe( minify() )
+		.pipe( gulp.dest( 'mystile-min' ) );
+});
+
 
 
 // Watch Task.
 gulp.task( 'watch', function(){
-    //var server = livereload();
-
-    // gulp.watch( '**/*.js' ) // any js anywhere.
-    //gulp.watch( jsSrcPath, [ 'scripts' ] ); //path, tasks to run
-    gulp.watch( cssSrcPath, [ 'styles' ] ); //path, tasks to run
+	gulp.watch( cssSrcPath, [ 'styles' ] ); //path, tasks to run
 });
 
 
@@ -65,11 +70,11 @@ gulp.task( 'default', [ 'styles' ] );
 // Modifies the javascript files.
 /*
 gulp.task( 'scripts', function(){
-    //console.log( 'scripts task start' );
-    gulp.src( jsSrcPath )
-        .pipe( uglify() )
-        .pipe( gulp.dest( jsDestPath ) )    //pipe runs a command.
-        .pipe( livereload() );
+	//console.log( 'scripts task start' );
+	gulp.src( jsSrcPath )
+		.pipe( uglify() )
+		.pipe( gulp.dest( jsDestPath ) )    //pipe runs a command.
+		.pipe( livereload() );
 });
 */
 
